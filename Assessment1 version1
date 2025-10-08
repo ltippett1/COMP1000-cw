@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void task1 () {
+
+//Declaring variables
+    //int allows the computer to know that users should enter whole numbers
+    int num1, num2;
+
+//User Input
+    //The code below will allow the user to enter their numbers
+        //The cout line is the text displays that prompts the user to enter a number
+        //The cin line is what allows the user to enter their number
+    std::cout << "Please Enter Your First Number:";
+    std::cin >> num1;
+    std::cout << "Please Enter Your Second Number:";
+    std::cin >> num2;
+
+//Addtion Formula
+    //The code below is the formula that will be used to add the user inputs together
+    int sum = num1 + num2;
+
+//Display Results
+    //The code below will display the results of the additon to the user
+    std::cout << "Addition:" << sum << std::endl; 
+}
+
+int main () {
+
+    task1;
+
+    return 0;
+}
