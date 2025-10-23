@@ -1,0 +1,211 @@
+//Name: Liam Tippett         StudentID: 25108221
+#include <iostream>
+#include <cmath>
+using namespace std;
+    //Using namespace std means that I don't have to put std each time, which will help make my code look cleaner and easier to follow
+
+void task1 (int num1, int num2) {
+
+    cout << "Task 1 - Variables & Output:" <<endl;
+
+//Addtion Formula
+    //The code below is the formula that will be used to add the user inputs together
+
+        int sum = num1 + num2;
+
+//Display Results
+    //The code below will display the results of the additon to the user
+    //Result should be 3 as my last 2 digits of my Student ID are 2 and 1
+
+        cout << "Addition:" << sum <<endl; 
+}
+
+void task2 () {
+
+    cout << "Task 2 - Arithmetic Operations:" <<endl;
+
+//Declare variables
+    //int allows the computer to know that users shoudld enter whole numbers
+
+        int num3, num4;
+
+//User Input
+    //The code below will allow the user to enter their numbers
+        //The cout line is the text display which prompts the user to enter a number
+        //The cin line is what allows the user to enter a number
+
+        cout << "Please Enter First Digit of Student ID:" <<endl;
+        cin >> num3;
+        cout << "Please Enter a Random Number:" <<endl;
+        cin >> num4;
+
+//Multiplcation Formula
+    //The code below is the formula that will be used to multiply the users inputs together
+
+        int product = num3 * num4;
+
+//Display Results
+    //The code below will display the results of the multiplication to the user
+
+        cout << "Multiplication:" << product <<endl;
+}
+
+void task3 (int StudentID) {
+
+    cout << "Task 3 - Loops" <<endl;
+
+    
+//Loop
+
+        for (int i = 1 - (StudentID % 10); i <= (StudentID % 20); i++) {
+
+        cout << "Print:" << i << endl;
+     }
+
+}
+
+void task4 (int StudentID) {
+
+    cout << "Task 4 - If-Else Conditions:" <<endl;
+
+//If-Else loop
+
+        if (StudentID % 2 ==0) {
+
+     //Condiition is when StudentID must have a modulus of 0
+
+        cout << "StudentID is even." <<endl;
+
+    //If StudentID is divided by 2 and leaves remainder of 0 then it will print even
+
+    } else {
+
+        cout << "StudentID is odd." <<endl;
+
+    //If StudentID is divisible by 2 and its modulus isn'1 0 then it will print odd.
+    }
+}
+
+void task5 (int StudentID) {
+
+    cout << "Task 5 - Switch Case:" <<endl;
+
+//Formula
+    //This will provide the condition for the switch case
+
+        int Day = (StudentID % 7) + 1;
+
+//Switch Case
+
+    switch (Day) {
+
+    //Will provide a day of a week based on the answer from the formula
+    //The break; function means that when a certain case has been met the loop will end
+
+        case 1:
+            cout << "Monday" <<endl;
+            break;
+
+        case 2:
+            cout << "Tuesday" <<endl;
+            break;
+
+        case 3:
+            cout << "Wednesday" <<endl;
+            break;
+
+        case 4:
+            cout << "Thursday" <<endl;
+            break;
+
+        case 5:
+            cout << "Friday" <<endl;
+            break;
+
+        case 6:
+            cout << "Saturday" <<endl;
+            break;
+
+        case 7:
+            cout << "Sunday" <<endl;
+            break;
+
+        default:
+        //If the input isn't between 1-7 then it will print this statement
+            cout << "Invalid StudentID!" <<endl;
+
+    }
+}
+
+void task6 () {
+
+    cout<< "Task 6 - Arrays:" << endl;
+
+//Declaring array
+    //The number inside the [] declares the size. In this case it declares a size of 5
+    //Numbers inside the {} initialises the values with the third element being my StudentID number
+
+            int arr[5] = {2, 3, 25108221, 5, 6};
+
+//Prinitng the 3rd element
+    //The first position is 0 so to access an element you do n-1
+        //Therefore to access the third element you do 3 - 1 = 2
+
+            cout << "The third element of the array is: " << arr[2] << endl;
+}
+
+void task7 (int num1, int num2) {
+
+    cout << "Task 7 - Euclidean distance:" << endl;
+
+//Coordinates
+
+        int x1 = 0, y1 = 0;
+        int x2 = num1, y2 = num2;
+
+//Euclidean distance is the same as the Pythagoras Theorem
+    //So I used the formula a^2 + b^2 = c^2 where c was the Euclidean distance 
+
+        float distance = sqrt((pow(x2 - x1, 2)) + (pow(y2 - y1, 2)));
+
+        cout << "Euclidean distance:" << distance << endl;
+}
+
+void task8 (int StudentID) {
+
+    cout << "Task 8 - Static Local Variables:" << endl;
+
+        for (int i = 0; i <= (StudentID % 5) + 1; i++) {
+
+        cout << "Function called:" << i << endl;
+    }
+
+}
+
+
+int main () {
+//This is where all the void names will go which will then allow the code to run
+
+//Declaring variables
+
+    int StudentID, num1, num2;
+
+
+//User Inputs
+
+    //The user will be able to enter these numbers once and then the relevant function will call the variables when needed 
+
+    cout << "Please enter StudentID:" << endl;
+    cin >> StudentID;
+    cout << "Please enter the second to last digit of StudentID:" <<endl;
+    cin >> num1;
+    cout << "Please enter last digit of StudentID:" << endl;
+    cin >> num2;
+
+
+//Having the variables inside the () allows the program to recall the variables the user has enterted and use them for those tasks
+
+    task1 (num1, num2); task2 (); task3 (StudentID); task4 (StudentID); task5(StudentID); task6 (); task7 (num1, num2); task8 (StudentID);
+
+    return 0;
+}
