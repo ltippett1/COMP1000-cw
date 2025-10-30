@@ -1,0 +1,280 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+    //Using namespace std means that I don't have to put std each time, which will help make my code look cleaner and easier to follow
+
+void task1 (int num1, int num2) {
+
+    cout << "Task 1 - Variables & Output:" <<endl;
+
+//Addtion Formula
+    //The code below is the formula that will be used to add the numbers together
+
+        int sum = num1 + num2;
+
+//Display Results
+    //The code below will display the results of the additon to the user
+    //Result should be 3 as my last 2 digits of my Student ID are 2 and 1
+
+        cout << "Addition:" << sum <<endl; 
+}
+
+void task2 (int num1) {
+
+    cout << "Task 2 - Arithmetic Operations:" <<endl;
+
+//Declare variables
+    //int allows the computer to know that users shoudld enter whole numbers
+
+        int num3;
+
+//User Input
+    //The code below will allow the user to enter their numbers
+        //The cout line is the text display which prompts the user to enter a number
+        //The cin line is what allows the user to enter a number
+
+        cout << "Please Enter a Random Number:" <<endl;
+        cin >> num3;
+
+//Multiplcation Formula
+    //The code below is the formula that will be used to multiply the users inputs together
+
+        int product = num1 * num3;
+
+//Display Results
+    //The code below will display the results of the multiplication to the user
+
+        cout << "Multiplication:" << product <<endl;
+}
+
+void task3 (int StudentID) {
+
+    cout << "Task 3 - Loops" <<endl;
+
+    
+//Loop
+
+        for (int i = 1 - (StudentID % 10); i <= (StudentID % 20); i++) {
+
+        cout << "Print:" << i << endl;
+     }
+
+//This loop will use my studentID and it will keep printing a modulus until it reaches the max value
+//So it should do 2 prints
+
+}
+
+void task4 (int StudentID) {
+
+    cout << "Task 4 - If-Else Conditions:" <<endl;
+
+//If-Else loop
+
+        if (StudentID % 2 ==0) {
+
+     //Condiition is when StudentID must have a modulus of 0
+
+        cout << "StudentID is even." <<endl;
+
+    //If StudentID is divided by 2 and leaves remainder of 0 then it will print even
+
+    } else {
+
+        cout << "StudentID is odd." <<endl;
+
+    //If StudentID is divisible by 2 and its modulus isn't 0 then it will print odd.
+    }
+}
+
+void task5 (int StudentID) {
+
+    cout << "Task 5 - Switch Case:" <<endl;
+
+//Formula
+    //This will provide the condition for the switch case
+
+        int Day = (StudentID % 7) + 1;
+
+//Switch Case
+
+    switch (Day) {
+
+    //Will provide a day of a week based on the answer from the formula - should be Saturday based on my StudentID
+    //The break; function means that when a certain case has been met the loop will end
+
+        case 1:
+            cout << "Monday" <<endl;
+            break;
+
+        case 2:
+            cout << "Tuesday" <<endl;
+            break;
+
+        case 3:
+            cout << "Wednesday" <<endl;
+            break;
+
+        case 4:
+            cout << "Thursday" <<endl;
+            break;
+
+        case 5:
+            cout << "Friday" <<endl;
+            break;
+
+        case 6:
+            cout << "Saturday" <<endl;
+            break;
+
+        case 7:
+            cout << "Sunday" <<endl;
+            break;
+
+        default:
+        //If the input isn't between 1-7 then it will print this statement
+            cout << "Invalid StudentID!" <<endl;
+
+    }
+}
+
+void task6 () {
+
+    cout<< "Task 6 - Arrays:" << endl;
+
+//Declaring array
+    //The number inside the [] declares the size. In this case it declares a size of 5
+    //Numbers inside the {} initialises the values with the third element being my StudentID number
+
+            int arr[5] = {2, 3, 25108221, 5, 6};
+
+//Prinitng the 3rd element
+    //The first position is 0 so to access an element you do n-1
+        //Therefore to access the third element you do 3 - 1 = 2
+
+            cout << "The third element of the array is: " << arr[2] << endl;
+}
+
+void task7 (int num1, int num2) {
+
+    cout << "Task 7 - Euclidean distance:" << endl;
+
+//Coordinates
+    //The coordinates will be used to work out the distance between a and b for the formula
+
+        int x1 = 0, y1 = 0;
+        int x2 = num1, y2 = num2;
+
+//Euclidean distance is the same as the Pythagoras Theorem
+    //So I used the formula a^2 + b^2 = c^2 where c was the Euclidean distance 
+
+        float distance = sqrt((pow(x2 - x1, 2)) + (pow(y2 - y1, 2)));
+
+        cout << "Euclidean distance:" << distance << endl;
+}
+
+void task8 (int StudentID) {
+
+    cout << "Task 8 - Static Local Variables:" << endl;
+
+//Loop
+        for (int i = 0; i <= (StudentID % 5) + 1; i++) {
+
+        cout << "Function called:" << i << endl;
+    }
+
+//This loop will keep calling the incrementing the function until it reaches the maximum value
+
+}
+
+//Task 9:
+double averagePositive () {
+
+    cout << "Task 9 - Debugging:" << endl;
+
+        double sum = 0;
+        int count = 0;
+        double num = 0;
+//Bug 1: Wrong datatypes 
+//Fix: Changes the datatypes for sum and num to double because they could be decimals
+
+    do {
+        cout << "Please enter a number (ends at -1):" << endl;
+        cin >> num;
+    
+        if (num == -1) {
+            cout << "User has ended loop." << endl;
+//Bug 2: Included -1 in the count
+//Fix: The break feature will end the loop when -1 is entered and having it before the count stops it from being included
+        break;
+
+        } if (num < 0) {
+            cout << "Negative numbers are not allowed!" << endl;
+        continue;
+//Bug 3: Included negative numbers
+//Fix: the continue feature will allow the loop to continue if negative numbers have been entered but it won't include them within the count
+        }
+
+    sum = sum + num;
+    count++;
+//Bug 4: Included negatives within count 
+//Fix: The ++ allows the count to increase by one by each valid number used
+
+        cout << "Sum so far:" << sum << endl;
+        cout << "Count so far:" << count << endl;
+//Wasn't a bug but this will display to the users the current sum and count so far
+
+} while (num != -1);
+
+    if (count == 0) {
+
+        cout << "No valid numbers have been entered" << endl;
+        return 0.0;
+    }
+        return sum / count;  
+    }
+
+void task10 (int globalStudentID) {
+
+    cout << "Task 10 - Global vs Static Global:" << endl;
+
+//Global
+    cout << "Global StudentID:" << globalStudentID << endl;
+
+        //This will show that the global variables doesn't change each time it is called 
+
+//Static
+    static int staticStudentID = 25108221;
+    
+    staticStudentID++;
+
+    cout << "Static StudentID:" << staticStudentID << endl;
+
+        //This will show how the static variable increases by 1 each time it is called up
+
+}
+
+
+int main () {
+//This is where all the void names will go which will then allow the code to run
+
+//Declaring variables
+
+    int StudentID = 25108221;
+    int num1 = 2;
+    int num2 = 1;
+    int globalStudentID = 25108221;
+  
+
+//Having the variables inside the () allows the program to recall the variables the user has enterted and use them for those tasks
+
+    task1 (num1, num2); task2 (num1); task3 (StudentID); task4 (StudentID); task5(StudentID); task6 (); task7 (num1, num2); task8 (StudentID); 
+   
+//This will display the average to the user
+    double avg = averagePositive ();
+    cout << "Average:" << avg << endl;
+
+//Calling task10 twice to help demonstrate the difference between global and static variables
+    task10 (globalStudentID); task10 (globalStudentID);
+
+     return 0;
+}
